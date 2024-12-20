@@ -1,0 +1,151 @@
+
+ 
+.title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.reservation-table {
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.reservation-table th,
+.reservation-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.reservation-table thead {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.reservation-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.reservation-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.action-button {
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
+
+.edit-button {
+  background-color: #3498db;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #2980b9;
+}
+
+.add-button {
+  background-color: #4CAF50;
+  color: white;
+  display: block;
+  margin: 20px auto;
+  padding: 8px 16px;
+}
+
+.add-button:hover {
+  background-color: #45a049;
+}
+
+.no-reservation {
+  text-align: center;
+  font-size: 18px;
+  color: #888;
+  margin-top: 20px;
+}
+
+.to-home {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  width: max-content;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.to-home:hover {
+  background-color: #0056b3;
+}
+
+/* @media screen and (max-width: 768px) {
+  .reservation-table,
+  .reservation-table thead,
+  .reservation-table tbody,
+  .reservation-table th,
+  .reservation-table td,
+  .reservation-table tr {
+    width: 100%;
+  }
+
+  .reservation-table thead {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reservation-table tr {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .reservation-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .reservation-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #333;
+  }
+
+  .action-button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+}
+
+ */

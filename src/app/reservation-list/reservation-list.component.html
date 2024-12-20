@@ -1,0 +1,41 @@
+<!-- <app-home></app-home> -->
+<div class="title">Reservation List</div>
+
+
+<button class="to-home" [routerLink]="['/home']">Home</button>
+
+
+<table class="reservation-table">
+  <thead>
+    <tr>
+      <th>Guest Name</th>
+      <th>Check-In Date</th>
+      <th>Check-Out Date</th>
+      <th>Room Number</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+   
+    <tr *ngFor="let reservation of reservations">
+      <td>{{ reservation.guestName }}</td>
+      <td>{{ reservation.checkInDate | date: 'shortDate' }}</td>
+      <td>{{ reservation.checkOutDate | date: 'shortDate' }}</td>
+      <td>{{ reservation.roomNumber }}</td>
+      <td>
+       
+        <button class="action-button edit-button" [routerLink]="['/edit', reservation.id]">Edit</button>
+        
+     
+        <button class="action-button delete-button" (click)="deleteReservation(reservation.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="reservations.length === 0" class="no-reservation">
+  No reservations found.
+</div>
+
+
+<button class="add-button" [routerLink]="['/new']">Add New Reservation</button>

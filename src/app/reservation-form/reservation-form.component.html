@@ -1,0 +1,67 @@
+ <!-- <app-home></app-home>  -->
+ 
+ <div class="reservation-form">
+  <button class="to-home" [routerLink]="['/home']">Home</button>
+
+  <!-- Displaying error message -->
+  <div *ngIf="errorMessage" style="color: red; font-weight: bold; text-align: center;">
+    {{ errorMessage }}
+  </div>
+
+  <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+    <h2>{{ reservationId ? 'Update Reservation' : 'Create Reservation' }}</h2>
+
+    <!-- Check-In Date Field -->
+    <div>
+      <label>Check-In Date:</label>
+      <input type="date" formControlName="checkInDate">
+      <div *ngIf="reservationForm.get('checkInDate')?.errors?.['required'] && reservationForm.get('checkInDate')?.touched" style="color: red;">
+        Check-In Date is required.
+      </div>
+    </div>
+
+    <!-- Check-Out Date Field -->
+    <div>
+      <label>Check-Out Date:</label>
+      <input type="date" formControlName="checkOutDate">
+      <div *ngIf="reservationForm.get('checkOutDate')?.errors?.['required'] && reservationForm.get('checkOutDate')?.touched" style="color: red;">
+        Check-Out Date is required.
+      </div>
+    </div>
+
+    <!-- Guest Name Field -->
+    <div>
+      <label>Guest Name:</label>
+      <input type="text" formControlName="guestName">
+      <div *ngIf="reservationForm.get('guestName')?.errors?.['required'] && reservationForm.get('guestName')?.touched" style="color: red;">
+        Guest Name is required.
+      </div>
+    </div>
+
+    <!-- Guest Email Field -->
+    <div>
+      <label>Guest Email:</label>
+      <input type="email" formControlName="guestEmail">
+      <div *ngIf="reservationForm.get('guestEmail')?.errors?.['required'] && reservationForm.get('guestEmail')?.touched" style="color: red;">
+        Guest Email is required.
+      </div>
+      <div *ngIf="reservationForm.get('guestEmail')?.errors?.['email'] && reservationForm.get('guestEmail')?.touched" style="color: red;">
+        Please enter a valid email address.
+      </div>
+    </div>
+
+    <!-- Room Number Field -->
+    <div>
+      <label>Room Number:</label>
+      <input type="text" formControlName="roomNumber">
+      <div *ngIf="reservationForm.get('roomNumber')?.errors?.['required'] && reservationForm.get('roomNumber')?.touched" style="color: red;">
+        Room Number is required.
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="reservationForm.invalid">
+      {{ reservationId ? 'Update' : 'Create' }} Reservation
+    </button>
+  </form>
+</div>
